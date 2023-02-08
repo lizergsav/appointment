@@ -1,0 +1,63 @@
+<div class="container-fluid">
+  <section class="banner_main">
+    <ngb-carousel
+      *ngIf="images"
+    >
+      <ng-template ngbSlide *ngFor="let image of images">
+        <div class="wrapper">
+          <img [src]="image" alt="Random slide" class="w-100"/>
+        </div>
+        <ol class="carousel-indicators carousel-indicators-numbers">
+          <li>test</li>
+        </ol>
+        <!--div class="carousel-caption">
+          <h3>No mouse navigation</h3>
+          <p>This carousel hides navigation arrows and indicators.</p>
+        </div-->
+      </ng-template>
+    </ngb-carousel>
+
+    <div class="booking_ocline">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-5">
+            <div class="book_room">
+              <h1>Book a Room Online</h1>
+              <form class="book_now">
+                <div class="row">
+                  <div class="col-md-12">
+                    <span>Arrival</span>
+                    <img class="date_cua" src="assets/images/date.png">
+                    <input class="online_book" placeholder="dd/mm/yyyy" type="text" ngbDatepicker #d="ngbDatepicker" name="dd/mm/yyyy">
+                  </div>
+                  <div class="col-md-12">
+                    <span>Departure</span>
+                    <img class="date_cua" src="assets/images/date.png">
+                    <form class="row row-cols-sm-auto">
+                      <div class="col-12">
+                        <div class="input-group">
+                          <input
+                            class="form-control online_book"
+                            placeholder="yyyy-mm-dd"
+                            name="dp"
+                            [(ngModel)]="model"
+                            ngbDatepicker
+                            #d="ngbDatepicker"
+                          />
+                          <button class="btn btn-outline-secondary bi bi-calendar3" (click)="d.toggle()" type="button"></button>
+                        </div>
+                      </div>
+                    </form>
+                    </div>
+                  <div class="col-md-12">
+                    <button class="book_btn">Book Now</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
